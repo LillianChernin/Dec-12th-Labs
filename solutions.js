@@ -87,8 +87,51 @@ for (let i = 0; i < container.length; i++) {
 
 const createCar = () => {
   return {
-    tires: 4;
+    tires: 4
   }
 }
 
 console.log(createCar().tires);
+
+// Create a data structure such that the following logs pears
+
+const generateShoppingList = () => {
+  return ["eggs", "milk", "cheese", "pears"];
+}
+
+console.log(generateShoppingList()[3]);
+
+// Create a data structure such that the following logs 20lbs
+
+const createRobot = () => {
+  return {
+    stats: {
+      weight: "20lbs"
+    }
+  }
+}
+
+
+console.log(createRobot().stats.weight);
+
+// Call the drive method
+
+const generateCar = ()=>{
+    return {
+        drive(){
+            console.log("Vroom");
+        }
+    }
+}
+
+generateCar().drive();
+
+// Create a data structure such that the following executes without errors:
+
+const createFunction = () => {
+  return () => {
+    console.log("Yay!");
+  }
+}
+
+createFunction()();
