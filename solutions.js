@@ -351,3 +351,116 @@ const foo = [
 ];
 
 foo[4]()();
+
+
+// Afternoon Lab
+
+//Log the following function:
+
+const foo = ()=>{
+    console.log('I have been invoked!');
+}
+
+foo();
+
+
+//Call foo, passing in a function:
+
+const foo = (param)=>{
+    console.log(param);
+}
+
+foo(() => {
+  return "hi";
+});
+
+
+//Call the someMethod function, passing in myFunc. It should log About to invoke the callback and then I have been called!
+
+const foo = {
+    someMethod(callback){
+        console.log('About to invoke the callback');
+        callback();
+    }
+}
+
+const myFunc = ()=>{
+    console.log('I have been called!');
+}
+
+foo.someMethod(myFunc);
+
+// Alter the following code so that myFunc properly logs the height property of foo
+
+const foo = {
+    height:5,
+    someMethod(callback){
+        callback();
+    }
+}
+
+const myFunc = (param)=>{
+    console.log(param.height);
+}
+
+//Create a method called combineColor on the shirtColor object that combines all the elements of the color array into a string
+
+const shirtColor = {
+  color: ['red', 'blue', 'green', 'white', 'pink']
+}
+shirtColor.combineColor = () => {
+  return shirtColor.color.join(", ");
+}
+
+// 1. Create a function called wordReverse that reverses a string.
+const wordReverse = (string) => {
+  return string.split(' ').reverse().join(' ');
+}
+// 2 Create a function called toUpperCase that capitalizes every letter in a string.
+const toUpperCase = (string) => {
+  return string.toUpperCase();
+}
+// 3. Write a function, called repMaster, that accepts two arguments, input and a
+//function. Input should be able to be used with the function. The function used
+//as an argument must return a string. repMaster should take the result of the string,
+// passed as an argument to the argument function, and return this result with ' proves
+// that I am the rep MASTER!' concatenated to it.
+
+const repMaster = (input, func) => {
+  return func(input) + ' proves that I am the rep MASTER!';
+}
+
+//1. Create a function that takes a parameter and logs it
+const logParam = (parameter) => {
+  console.log(parameter);
+}
+//2. Create a second function that logs 'hi'
+const logsHi = () => {
+  console.log('hi');
+}
+//3. Invoke the first function, passing in the second function as a parameter
+logParam(logsHi);
+//4. You should see a function reference being logged
+//5. Alter the first function so that it invokes its parameter
+const logParam2 = (parameter) => {
+  return parameter();
+}
+//6. If you did these steps correctly, you should get a log of 'hi'
+
+logParam2(logsHi);
+
+// Fix the last line of this snippet so it logs this method was called:
+
+const bar = {
+    someMethod(param){
+        param();
+    }
+}
+
+const foo = {
+    someMethod(){
+        console.log('this method was called');
+    }
+}
+
+bar.someMethod(foo.someMethod);
