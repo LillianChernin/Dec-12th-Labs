@@ -45,3 +45,50 @@ const myArrays = [
 ]
 
 console.log(myArrays[2][4]);
+
+// Call the function in the given code:
+const awesome = [
+    {
+        asdf:'true'
+    },
+    3456.245,
+    ()=>{
+        console.log('fun');
+    },
+    "buddy"
+];
+
+console.log(awesome[2]());
+
+// Loops over the following array, and print its values:
+
+const refrigerator = {
+    fruits: ['apple', 'pear', 'banana']
+}
+ for (let i = 0; i < refrigerator.fruits.length; i++) {
+   console.log(refrigerator.fruits[i]);
+ }
+
+ // Use two loops to loop over each array in the given "container" array
+
+ const container = [
+    [1,5,7],
+    ['bear', 'dog', 'cat'],
+    [true, false, true]
+];
+
+for (let i = 0; i < container.length; i++) {
+  for (let j = 0; j < container[i].length; j++) {
+    console.log(container[i][j]);
+  }
+}
+
+// Create a data structure such that the following logs 4
+
+const createCar = () => {
+  return {
+    tires: 4;
+  }
+}
+
+console.log(createCar().tires);
