@@ -193,3 +193,161 @@ for (let i = 0; i < instruments.guitar.electric.length; i++) {
 // 2. Add a property to the instruments object, that includes a list of your favourite singers.
 
 instruments.favSingers = ["joni mitchell", "judy collins", "tracy chapman", "roberta flack"];
+
+// Using crazy object print the following
+
+const crazyObject = {
+  taco: [{meat: 'steak',
+         cheese: ['panela', 'queso', 'chihuahua']},
+         {meat: 'chicken',
+          salsa: ["pico", "hot", "hotter", "really hot", "really really hot", "omg my mouth is burning"]},
+        ],
+  larry: {
+    nicknames: ["LD", "Chicken Teriyaki Boyyyyyy"],
+    quotes: ["Pretty pretty prettayyyyy good", "Is that a parkinson's thing?", "women love a self confident bald man", "I'm a walking talking enigma"],
+    characters: [{
+      name: "Jeff",
+      occupation: "manager"
+    },
+    {
+      name: "funkhauser",
+      occupation: "tv dude"
+    },
+    {
+      name: "susie",
+      occupation: "jeffs wife",
+      favouriteHobby: "Swearing at Larry and Jeff"
+    }
+    ]
+  }
+}
+
+// 1. "omg my mouth is burning"
+console.log(crazyObject.taco[1].salsa[5]);
+
+// 2. Pretty pretty prettayyyyy good"
+console.log(crazyObject.larry.quotes[0]);
+
+// 3. "Swearing at Larry and Jeff"
+console.log(crazyObject.larry.characters[2].favouriteHobby);
+
+// 4. "Chicken Teriyaki Boyyyyyy"
+console.log(crazyObject.larry.nicknames[1]);
+
+// 5. "The object the contains the name funkhauser"
+console.log(crazyObject.larry.characters[1]);
+
+// Create a data structure such that the following code logs "boat":
+
+const baz = {
+  foo: () => {
+    return {
+      matt: {
+        travel: "boat"
+      }
+    }
+  }
+}
+
+console.log(baz.foo().matt.travel);
+
+// Create a data structure such that the following code executes without error:
+
+const factory = {
+  createCar: () => {
+    return {
+      startEngine: () => {
+        return "Yay!"
+      }
+    }
+  }
+}
+
+// Run the inner function:
+
+const matt = {
+    blink(){
+        return ()=>{
+            console.log('hi')
+        }
+    }
+}
+
+matt.blink()();
+
+// Access the foo property:
+
+const asdfasdf = [
+    true,
+    false,
+    ()=>{
+        return {
+            foo: 'some value'
+        }
+    },
+    'apple'
+];
+
+console.log(asdfasdf[2]().foo);
+
+//Create a data structure such that the following code logs "dog"
+
+const matt = [
+  0, () => {
+    return {
+      someArray: ["dog"]
+    }
+  }
+]
+
+console.log(matt[1]().someArray[0]);
+
+// Create a data structure such that the following code logs "blue"
+
+const foods = [
+  0, () => {
+    return {
+      anObject: {
+        color: "blue"
+      }
+    }
+  }
+]
+
+console.log(foods[1]().anObject.color);
+
+// Call the funStuff() method:
+
+const list = [
+    'dogs',
+    false,
+    3.5,
+    ()=>{
+        return {
+            funStuff(){
+                console.log('yaaassss');
+            }
+        }
+    }
+];
+
+list[3]().funStuff();
+
+// Call the most inner function:
+
+const foo = [
+    'asdfasdf',
+    'matt',
+    false,
+    6,
+    ()=>{
+        return ()=>{
+            console.log('yes!');
+        }
+    },
+    {
+        dog:'blue'
+    }
+];
+
+foo[4]()();
