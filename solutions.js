@@ -135,3 +135,61 @@ const createFunction = () => {
 }
 
 createFunction()();
+
+// Log the message attribute
+
+const account = {
+    tweet(){
+        return {
+            message: "fun"
+        }
+    }
+}
+
+console.log(account.tweet().message);
+
+// Log the second element in the array
+
+const me = {
+    foo(){
+        return {
+            array: [2.5, 7, true]
+        }
+    }
+}
+
+console.log(me.foo().array[1]);
+
+// Use the instruments object to print the following.
+
+const instruments = {
+  banjo: ["1920 gibson", "deering", "washburn"],
+  guitar: {
+    acoustic: ["martin", "taylor", "santa cruz", "gibson"],
+    electric: ["fender Strat", "telecastor", "PRS", "languedoc"],
+    nylon: ["baldwin", "cordoba"]
+  },
+  mandolin: ["eastman", "weber", "collings"]
+}
+
+// 1. "telecastor"
+console.log(instruments.guitar.electric[1]);
+
+// 2. "santa cruz"
+console.log(instruments.guitar.acoustic[2]);
+
+// 3. "washburn"
+console.log(instruments.banjo[2]);
+
+// 4. "weber"
+console.log(instruments.mandolin[1]);
+
+// 1. Using the instruments object loop through all the electric guitars and print them to the console.
+
+for (let i = 0; i < instruments.guitar.electric.length; i++) {
+  console.log(instruments.guitar.electric[i]);
+}
+
+// 2. Add a property to the instruments object, that includes a list of your favourite singers.
+
+instruments.favSingers = ["joni mitchell", "judy collins", "tracy chapman", "roberta flack"];
